@@ -6,11 +6,32 @@ use app\models\News;
 use app\services\NewsGenerator;
 use app\services\StatsGenerator;
 use Yii;
+use yii\base\Module;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 
 class SiteController extends Controller
 {
+    /**
+     * @var NewsGenerator
+     */
+    private $newsGenerator;
+    /**
+     * @var StatsGenerator
+     */
+    private $statsGenerator;
+
+    public function __construct(
+        $id, Module $module,
+        NewsGenerator $newsGenerator, StatsGenerator $statsGenerator,
+        array $config = [])
+    {
+        parent::__construct($id, $module, $config);
+
+        $this->newsGenerator = $newsGenerator;
+        $this->statsGenerator = $statsGenerator;
+    }
+
     public function actionIndex()
     {
         return $this->render('index');
@@ -21,16 +42,13 @@ class SiteController extends Controller
      *
      * @return string
      */
-    public function actionGenerateNews($count = 150)
+    public function actionGenerateNews($count = 40)
     {
         /** @var NewsGenerator $newsGenerator */
-        $newsGenerator =  new NewsGenerator();
-        $start = microtime(true);
-        $newsGenerator->generate($count);
+        $this->newsGenerator->generate($count);
 
         return $this->render('generation-result', [
-            'number' => $count,
-            'duration' => microtime(true) - $start,
+            'number' => $count
         ]);
     }
 
@@ -48,21 +66,10 @@ class SiteController extends Controller
 
     public function actionStats()
     {
-        $statsGenerator = new StatsGenerator();
-        $stats = $statsGenerator->generate();
+        $stats = $this->statsGenerator->generate();
 
         return $this->render('stats', [
             'stats' => $stats
         ]);
-    }
-
-    /**
-     * Displays about page.
-     *
-     * @return string
-     */
-    public function actionAbout()
-    {
-        return $this->render('about');
     }
 }

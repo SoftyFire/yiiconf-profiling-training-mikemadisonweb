@@ -9,7 +9,7 @@
 
 <article>
     <header><?= $model->title ?></header>
-    <div class="text"><?= $model->text ?></div>
+    <div class="text"><?= nl2br($model->text) ?></div>
     <div class="tags">
         <h5>Tags:</h5>
         <ul>

@@ -5,6 +5,11 @@ namespace app\models;
 
 use yii\db\ActiveRecord;
 
+/**
+ * Class NewsTags
+ *
+ * @author Dmytro Naumenko <d.naumenko.a@gmail.com>
+ */
 class NewsTags extends ActiveRecord
 {
     public function rules()

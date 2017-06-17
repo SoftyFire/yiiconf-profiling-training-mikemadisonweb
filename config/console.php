@@ -10,12 +10,12 @@ $config = [
     'controllerNamespace' => 'app\commands',
     'components' => [
         'cache' => [
-            'class' => 'yii\caching\FileCache',
+            'class' => yii\caching\FileCache::class,
         ],
         'log' => [
             'targets' => [
                 [
-                    'class' => 'yii\log\FileTarget',
+                    'class' => yii\log\FileTarget::class,
                     'levels' => ['error', 'warning'],
                 ],
             ],

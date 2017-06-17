@@ -6,13 +6,28 @@ use app\models\News;
 use app\models\NewsStats;
 use app\models\Tag;
 
+/**
+ * Class StatsGenerator
+ *
+ * Generates [[NewsStats]] out of existing news.
+ *
+ * @author Dmytro Naumenko <d.naumenko.a@gmail.com>
+ */
 class StatsGenerator
 {
+    /**
+     * @return NewsStats
+     */
     public function generate()
     {
         return new NewsStats($this->wordsCount(), $this->newsCount());
     }
 
+    /**
+     * Counts words stats
+     *
+     * @return array
+     */
     private function wordsCount()
     {
         /** @var News $allNews */
@@ -26,6 +41,9 @@ class StatsGenerator
         return $wordsCount;
     }
 
+    /**
+     * @return int news count
+     */
     private function newsCount()
     {
         return count(News::find()->all());

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "872e3e6c6bedab3780f55b0104ecd722",
+    "content-hash": "7ffdf7e4f2575f1d8f68f9726ddd6d26",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -26,23 +26,7 @@
             "type": "bower-asset"
         },
         {
-            "name": "bower-asset/jquery",
-            "version": "2.2.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/jquery/jquery-dist.git",
-                "reference": "c0185ab7c75aab88762c5aae780b9d83b80eda72"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/jquery/jquery-dist/zipball/c0185ab7c75aab88762c5aae780b9d83b80eda72",
-                "reference": "c0185ab7c75aab88762c5aae780b9d83b80eda72",
-                "shasum": null
-            },
-            "type": "bower-asset"
-        },
-        {
-            "name": "bower-asset/jquery.inputmask",
+            "name": "bower-asset/inputmask",
             "version": "3.3.7",
             "source": {
                 "type": "git",
@@ -57,6 +41,22 @@
             },
             "require": {
                 "bower-asset/jquery": ">=1.7"
+            },
+            "type": "bower-asset"
+        },
+        {
+            "name": "bower-asset/jquery",
+            "version": "2.2.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jquery/jquery-dist.git",
+                "reference": "c0185ab7c75aab88762c5aae780b9d83b80eda72"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jquery/jquery-dist/zipball/c0185ab7c75aab88762c5aae780b9d83b80eda72",
+                "reference": "c0185ab7c75aab88762c5aae780b9d83b80eda72",
+                "shasum": null
             },
             "type": "bower-asset"
         },
@@ -203,36 +203,30 @@
             "time": "2017-06-03T02:28:16+00:00"
         },
         {
-            "name": "swiftmailer/swiftmailer",
-            "version": "5.x-dev",
+            "name": "joshtronic/php-loremipsum",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "4441f8a61006f81138aa4a3e5a6cb8330e5160f2"
+                "url": "https://github.com/joshtronic/php-loremipsum.git",
+                "reference": "e033baaa7913f0e2f36e20d42678b2842bc6e54a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/4441f8a61006f81138aa4a3e5a6cb8330e5160f2",
-                "reference": "4441f8a61006f81138aa4a3e5a6cb8330e5160f2",
+                "url": "https://api.github.com/repos/joshtronic/php-loremipsum/zipball/e033baaa7913f0e2f36e20d42678b2842bc6e54a",
+                "reference": "e033baaa7913f0e2f36e20d42678b2842bc6e54a",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3"
+                "php": ">=5.3.0"
             },
             "require-dev": {
-                "mockery/mockery": "~0.9.1",
-                "symfony/phpunit-bridge": "~3.2"
+                "satooshi/php-coveralls": "~1.0"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "5.4-dev"
-                }
-            },
             "autoload": {
-                "files": [
-                    "lib/swift_required.php"
-                ]
+                "psr-4": {
+                    "joshtronic\\": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -240,21 +234,19 @@
             ],
             "authors": [
                 {
-                    "name": "Chris Corbyn"
-                },
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
+                    "name": "Josh Sherman",
+                    "email": "josh@gravityblvd.com",
+                    "homepage": "http://joshtronic.com"
                 }
             ],
-            "description": "Swiftmailer, free feature-rich PHP mailer",
-            "homepage": "http://swiftmailer.org",
+            "description": "Lorem ipsum generator in PHP without dependencies",
+            "homepage": "https://github.com/joshtronic/php-loremipsum",
             "keywords": [
-                "email",
-                "mail",
-                "mailer"
+                "generator",
+                "ipsum",
+                "lorem"
             ],
-            "time": "2017-05-19 18:47:58"
+            "time": "2017-05-28T23:30:23+00:00"
         },
         {
             "name": "yiisoft/yii2",
@@ -262,17 +254,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "ba3b48048bf3472ae18191b0002066dc846c7fca"
+                "reference": "2fbd92ce20ff2c435c573eb6962084056547d9a6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/ba3b48048bf3472ae18191b0002066dc846c7fca",
-                "reference": "ba3b48048bf3472ae18191b0002066dc846c7fca",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/2fbd92ce20ff2c435c573eb6962084056547d9a6",
+                "reference": "2fbd92ce20ff2c435c573eb6962084056547d9a6",
                 "shasum": ""
             },
             "require": {
+                "bower-asset/inputmask": "~3.2.2 | ~3.3.5",
                 "bower-asset/jquery": "2.2.*@stable | 2.1.*@stable | 1.11.*@stable | 1.12.*@stable",
-                "bower-asset/jquery.inputmask": "~3.2.2 | ~3.3.5",
                 "bower-asset/punycode": "1.3.*",
                 "bower-asset/yii2-pjax": "~2.0.1",
                 "cebe/markdown": "~1.0.0 | ~1.1.0",
@@ -354,7 +346,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2017-06-12 09:25:45"
+            "time": "2017-06-17 11:49:38"
         },
         {
             "name": "yiisoft/yii2-bootstrap",
@@ -455,59 +447,28 @@
                 "yii2"
             ],
             "time": "2016-12-20 13:33:37"
-        },
-        {
-            "name": "yiisoft/yii2-swiftmailer",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/yiisoft/yii2-swiftmailer.git",
-                "reference": "97d14bf3dad4bb389beb646e25c0d822db1365e8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-swiftmailer/zipball/97d14bf3dad4bb389beb646e25c0d822db1365e8",
-                "reference": "97d14bf3dad4bb389beb646e25c0d822db1365e8",
-                "shasum": ""
-            },
-            "require": {
-                "swiftmailer/swiftmailer": "~5.0",
-                "yiisoft/yii2": "~2.0.4"
-            },
-            "type": "yii2-extension",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "yii\\swiftmailer\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Paul Klimov",
-                    "email": "klimov.paul@gmail.com"
-                }
-            ],
-            "description": "The SwiftMailer integration for the Yii framework",
-            "keywords": [
-                "email",
-                "mail",
-                "mailer",
-                "swift",
-                "swiftmailer",
-                "yii2"
-            ],
-            "time": "2017-05-24 10:14:19"
         }
     ],
     "packages-dev": [
+        {
+            "name": "bower-asset/jquery.inputmask",
+            "version": "3.3.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/RobinHerbots/Inputmask.git",
+                "reference": "9835731cb78cac749734d94a1cb5bd70da4d3b10"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/RobinHerbots/Inputmask/zipball/9835731cb78cac749734d94a1cb5bd70da4d3b10",
+                "reference": "9835731cb78cac749734d94a1cb5bd70da4d3b10",
+                "shasum": null
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.7"
+            },
+            "type": "bower-asset"
+        },
         {
             "name": "yiisoft/yii2-debug",
             "version": "dev-master",
@@ -553,7 +514,7 @@
                 "debugger",
                 "yii2"
             ],
-            "time": "2017-05-22T12:59:26+00:00"
+            "time": "2017-05-22 12:59:26"
         }
     ],
     "aliases": [],

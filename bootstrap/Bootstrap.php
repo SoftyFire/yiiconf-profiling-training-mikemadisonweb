@@ -14,6 +14,6 @@ class Bootstrap implements BootstrapInterface
      */
     public function bootstrap($app)
     {
-        // todo: long op
+        sleep(2); // Surprise :)
     }
 }

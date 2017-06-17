@@ -5,8 +5,30 @@ namespace app\services;
 use app\models\News;
 use app\models\Tag;
 
+/**
+ * Class NewsGenerator
+ *
+ * Generates random news for testing purposes.
+ *
+ * @author Dmytro Naumenko <d.naumenko.a@gmail.com>
+ */
 class NewsGenerator
 {
+    /**
+     * @var \joshtronic\LoremIpsum
+     */
+    private $ipsum;
+
+    /**
+     * NewsGenerator constructor.
+     *
+     * @param \joshtronic\LoremIpsum $ipsum
+     */
+    function __construct(\joshtronic\LoremIpsum $ipsum)
+    {
+        $this->ipsum = $ipsum;
+    }
+
     /**
      * @param int $number Number of news to be generated
      * @void
@@ -21,7 +43,7 @@ class NewsGenerator
     /**
      * @return News
      */
-    protected function createRandomNews()
+    private function createRandomNews()
     {
         $news = new News([
             'title' => $this->generateRandomTitle(),
@@ -36,9 +58,9 @@ class NewsGenerator
     /**
      * @return Tag
      */
-    protected function getRandomTag()
+    private function getRandomTag()
     {
-        $availableTags = [
+        $tags = [
             'hit',
             'politics',
             'culture',
@@ -53,16 +75,16 @@ class NewsGenerator
             'biology',
         ];
 
-        $i = mt_rand(0, count($availableTags) - 1);
+        $i = mt_rand(0, count($tags) - 1);
 
-        return $this->ensureTag($availableTags[$i]);
+        return $this->ensureTag($tags[$i]);
     }
 
     /**
      * @param string $name
      * @return Tag
      */
-    protected function ensureTag($name)
+    private function ensureTag($name)
     {
         if ($tag = Tag::find()->where(['name' => $name])->one()) {
             return $tag;
@@ -78,7 +100,7 @@ class NewsGenerator
      * @param News $news
      * @void
      */
-    protected function generateTagsForNews($news)
+    private function generateTagsForNews($news)
     {
         $count = mt_rand(1, 5);
 
@@ -87,14 +109,19 @@ class NewsGenerator
         }
     }
 
-    protected function generateRandomTitle()
+    /**
+     * @return string
+     */
+    private function generateRandomTitle()
     {
-        return 'Lorem ipsum dolor sir emet';
+        return $this->ipsum->words(8);
     }
 
-    protected function generateRandomText()
+    /**
+     * @return string
+     */
+    private function generateRandomText()
     {
-        return str_repeat('Lorem ipsum dolor sir emet.', mt_rand(7, 23));
+        return $this->ipsum->paragraphs(2);
     }
-
 }
